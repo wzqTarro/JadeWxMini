@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/home/home/home",
+    "pages/classify/classify/classify",
+    "pages/user/user/user",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  }
+}

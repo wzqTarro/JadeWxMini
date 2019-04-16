@@ -1,0 +1,23 @@
+<home wx:if="{{PageCur=='home'}}"></home>
+<classify wx:if="{{PageCur=='classify'}}"></classify>
+<user wx:if="{{PageCur=='user'}}"></user>
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action" bindtap="NavChange" data-cur="home">
+    <view class='icon-cu-image'>
+      <image src="/images/tabbar/home{{PageCur=='home'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='home'?'text-blue':'text-gray'}}">首页</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="classify">
+    <view class='icon-cu-image'>
+      <image src="/images/tabbar/classify{{PageCur=='classify'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='classify'?'text-blue':'text-gray'}}">分类</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="user">
+    <view class='icon-cu-image'>
+      <image src="/images/tabbar/user{{PageCur=='user'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='user'?'text-blue':'text-gray'}}">我的</view>
+  </view>
+</view>
