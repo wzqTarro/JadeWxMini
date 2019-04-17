@@ -1,11 +1,9 @@
-const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // 轮播
     cardCur: 0,
     swiperList: [{
       id: 0,
@@ -20,46 +18,11 @@ Page({
       type: 'image',
       url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
     }],
-    // 九宫格
-    StatusBar: app.globalData.StatusBar,
-    CustomBar: app.globalData.CustomBar,
-    iconList: [{
-      icon: 'cardboardfill',
-      color: 'red',
-      badge: 120,
-      name: 'VR'
-    }, {
-      icon: 'recordfill',
-      color: 'orange',
-      badge: 1,
-      name: '录像'
-    }, {
-      icon: 'picfill',
-      color: 'yellow',
-      badge: 0,
-      name: '图像'
-    }, {
-      icon: 'noticefill',
-      color: 'olive',
-      badge: 22,
-      name: '通知'
-    }, {
-      icon: 'upstagefill',
-      color: 'cyan',
-      badge: 0,
-      name: '排行榜'
-    }, {
-      icon: 'clothesfill',
-      color: 'blue',
-      badge: 0,
-      name: '皮肤'
-    }],
-    gridCol: 3,
-    skin: false
   },
+
   /**
-     * 生命周期函数--监听页面加载
-     */
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function (options) {
     this.towerSwiper('swiperList');
   },
@@ -124,5 +87,4 @@ Page({
       })
     }
   }
-
 })
