@@ -1,3 +1,8 @@
 {
-
+  "component": true,
+  "usingComponents":{
+    "goodSearch":"/component/search/search",
+    "cardSwiper":"/component/swiper/cardSwiper/cardSwiper",
+    "goodList":"/component/good/goodList/goodList"
+  }
 }

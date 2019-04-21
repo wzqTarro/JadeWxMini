@@ -1,0 +1,8 @@
+<scroll-view scroll-y class="scrollPage">
+  <cu-custom bgColor="bg-gradual-pink" ><!-- <view slot="content">碧轩阁</view> --></cu-custom>
+  <!-- 搜索框 -->
+  <goodSearch></goodSearch>
+
+  <!-- 商品列表 -->
+  <goodList images="{{good.images}}" loadingCount="{{good.loadingCount}}"></goodList>
+</scroll-view>

@@ -1,1 +1,6 @@
-{}
+{
+  "usingComponents": {
+    "goodSearch": "/component/search/search",
+    "goodList": "/component/good/goodList/goodList"
+  }
+}

@@ -38,10 +38,19 @@ App({
         let custom = wx.getMenuButtonBoundingClientRect();
         this.globalData.Custom = custom;
         this.globalData.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
+
+        // 可使用窗体宽度
+        let windowWidth = e.windowWidth
+        // 可使用窗体高度
+        let windowHeight = e.windowHeight
+        this.globalData.windowHeight = windowHeight
+        this.globalData.windowWidth = windowWidth
       }
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    windowWidth: null,
+    windowHeight: null
   }
 })
