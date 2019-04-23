@@ -1,0 +1,8 @@
+<swiper class="card-swiper" style='height:400rpx' circular="true"  autoplay="true" interval="5000" duration="500" bindchange="cardSwiper">
+    <swiper-item wx:for="{{swiperList}}" style="padding:20rpx 0rpx 20rpx" wx:key class="{{cardCur==index?'cur':''}}">
+      <view class="swiper-item" >
+        <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+        <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+      </view>
+    </swiper-item>
+  </swiper>

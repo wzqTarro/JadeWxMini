@@ -12,7 +12,11 @@ Component({
     good: {
       images: [],
       loadingCount: 0
-    }
+    }, 
+    // 选项
+    TabCur: 0,
+    scrollLeft: 0,
+    selectList: ["全部", "手镯", "玉坠", "玉牌", "观音", "佛"]
   },
   lifetimes: {
     attached() {
@@ -93,6 +97,12 @@ Component({
           loadingCount: images.length,
           images: images
         }
+      })
+    },
+    tabSelect(e) {
+      this.setData({
+        TabCur: e.currentTarget.dataset.id,
+        scrollLeft: (e.currentTarget.dataset.id - 1) * 60
       })
     }
   }

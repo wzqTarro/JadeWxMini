@@ -1,0 +1,28 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}" bindtap="back"></cu-custom>
+<view>
+  <view class="cu-bar search bg-white" style='display:fixed'>
+    <view class="search-form round">
+      <text class="icon-search"></text>
+      <input type="text" placeholder="搜索" value="{{searchText}}" bindinput='bindSearchText' confirm-type="search"  bindconfirm="searchGood"></input>
+    </view>
+    <view class="action">
+      <button class="cu-btn bg-blue shadow-blur round" bindtap='searchGood'>搜索</button>
+    </view>
+  </view>
+  <view class="history-search">
+    <view class="cu-capsule" style='margin-left:10rpx'>
+      <view class="cu-tag bg-red">
+        <text class="icon-likefill"></text>
+      </view>
+      <view class="cu-tag line-red">
+        历史搜索
+      </view>
+    </view>
+    <view class='history-textList'>
+      <view class="cu-tag round" style='margin-right:20rpx'
+        wx:for="{{historyList}}" wx:for-item="history" wx:key="history" >{{history}}</view>
+    </view>
+    
+  </view>
+  
+</view>

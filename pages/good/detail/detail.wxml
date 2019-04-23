@@ -1,0 +1,28 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+</cu-custom>
+<scroll-view scroll-y="true">
+  <!-- 商品展示  -->
+  <swiper class="screen-swiper square-dot" style='height:{{imageHeight}}' indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+    <swiper-item wx:for="{{swiperList}}" wx:key>
+      <image src="{{item.url}}" mode="aspectFill"  wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </swiper-item>
+  </swiper>
+
+  <!-- 基本信息 -->
+  <view class='bg-white basic-message'>
+    <view class='good-price-wrapper'>
+      <p class="good-price-new"><span class="price-icon">￥</span>{{good.newprice}}</p>
+      <p class="good-price-old">￥{{good.oldprice}}</p>
+    </view>
+    <view class='good-name'>
+      {{good.name}}
+    </view>
+    <view class='good-sell-wrapper'>
+      <p class="good-stock">数量：{{good.stockNum}}</p>
+      <p>发货：省份</p>
+      <p>快递：免邮</p>
+      <p class="good-sell-num">{{good.sellNum}}人付款</p>
+    </view>
+  </view>
+</scroll-view>

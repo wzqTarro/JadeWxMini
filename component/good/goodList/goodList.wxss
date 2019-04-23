@@ -1,0 +1,57 @@
+.goods{
+  display: flex;
+  justify-content: space-around;
+  padding: 10rpx;
+  width: 100%;
+  height: 100%
+}
+.good-item-left, .good-item-right{
+  width: 48%;
+}
+.good-item {
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  padding-bottom: 20rpx;
+  background-color: #fff;
+}
+.good-item .good-img image {
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+/* .good-item .good-img {
+  padding-bottom:50rpx;
+} */
+.good-name{
+  display: -webkit-box;
+  color: #000;
+  margin: 5rpx 5rpx 10rpx 10rpx;
+  line-height: 40rpx;
+  /* 多行文本溢出-设置为2行 */
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 80rpx;
+}
+
+.good-price-wrap .good-price-new{
+  color: #e80080;
+  margin-left:5rpx;
+  /* font-weight:900; */
+  font-size: 30rpx;
+}
+.good-price-wrap .good-price-old{
+  color: #888;
+  text-decoration: line-through;
+  margin-left: 5rpx;
+}
+.good-price-wrap .discount{
+  margin-left: 10rpx;
+  background-color: #000;
+  color: #fff;
+}
+.good-price-wrap .good-sell-num{
+  font-size: 25rpx;
+  margin-left: 15rpx;
+}

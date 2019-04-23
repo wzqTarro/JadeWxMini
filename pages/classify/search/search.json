@@ -1,0 +1,5 @@
+{
+  "usingComponents":{
+    "goodSearch":"/component/search/search"
+  }
+}

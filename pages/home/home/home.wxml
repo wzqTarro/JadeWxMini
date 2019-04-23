@@ -1,8 +1,10 @@
 <scroll-view scroll-y class="scrollPage">
-  <cu-custom bgColor="bg-gradual-pink" ><!-- <view slot="content">碧轩阁</view> --></cu-custom>
+  <cu-custom bgColor="bg-gradual-blue" ><!-- <view slot="content">碧轩阁</view> --></cu-custom>
   
   <!-- 搜索框 -->
-  <goodSearch></goodSearch>
+  <view style='min-height:100rpx'>
+    <goodSearch style='position:fixed;z-index:100;width:100%'></goodSearch>
+  </view>
 
   <!-- 轮播图 -->
   <cardSwiper></cardSwiper>

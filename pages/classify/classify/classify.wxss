@@ -1,0 +1,5 @@
+.select-item{
+  color: #0081ff;
+  background-color: white;
+  border: 3rpx solid #0081ff;
+}

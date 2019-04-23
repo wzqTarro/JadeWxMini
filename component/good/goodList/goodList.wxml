@@ -1,0 +1,43 @@
+<view class="goods">
+  <view class='good-item-left'>
+    <view class="good-item" wx:for="{{leftCol}}" wx:key="id" bindtap='goDetail'>
+      <view class="good-img">
+        <image src='{{item.imageurl}}' style='width:100%;height:{{item.height}}'></image>
+      </view>
+      <view class="good-name">
+        {{item.name}}
+      </view>
+      <view class="good-price-wrap">
+        <p class="good-price-new">￥{{item.newprice}}</p>
+        <p class="good-sell-num">{{item.sellNum}}人付款</p>
+        <!-- <p class="discount" wx:if="{{item.oldprice > 0}}">{{item.discount}}折</p> -->
+      </view>
+      <!-- <view class="good-price-wrap" wx:if="{{item.oldprice > 0}}">
+        <p class="good-price-old">￥{{item.oldprice}}</p>
+      </view> -->
+    </view>
+  </view>
+  
+  <view class='good-item-right'>
+    <view class="good-item" wx:for="{{rightCol}}" wx:key="id" bindtap='goDetail'>
+      <view class="good-img">
+        <image src='{{item.imageurl}}' style='width:100%;height:{{item.height}}'></image>
+      </view>
+      <view class="good-name">
+        {{item.name}}
+      </view>
+      <view class="good-price-wrap">
+        <p class="good-price-new">￥{{item.newprice}}</p>
+        <p class="good-sell-num">{{item.sellNum}}人付款</p>
+        <!-- <p class="discount" wx:if="{{item.oldprice > 0}}">{{item.discount}}折</p> -->
+      </view>
+      <!-- <view class="good-price-wrap" wx:if="{{item.oldprice > 0}}">
+        <p class="good-price-old">￥{{item.oldprice}}</p>
+      </view> -->
+    </view>
+  </view>
+  <view style="display:none">
+    <!-- bindload图片加载时会触发一次 -->
+    <image wx:for="{{images}}" wx:key="id" id="{{item.id}}" src="{{item.imageurl}}" bindload="onImageLoad"></image>
+  </view>
+</view>

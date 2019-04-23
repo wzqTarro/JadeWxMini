@@ -1,0 +1,7 @@
+<view class="cu-bar search bg-white">
+    <view class="cu-avatar round" style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);"></view>
+    <view class="search-form round">
+      <text class="icon-search"></text>
+      <input type="text" placeholder="搜索图片、文章、视频" disabled='true' bindtap="goSearch"></input>
+    </view>
+  </view>

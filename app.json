@@ -1,9 +1,9 @@
 {
   "pages":[
+    
     "pages/index/index",
-    "pages/home/home/home",
-    "pages/classify/classify/classify",
-    "pages/user/user/user",
+    "pages/good/detail/detail",
+    "pages/classify/search/search",
     "pages/logs/logs"
   ],
   "window":{
