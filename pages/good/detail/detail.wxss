@@ -1,3 +1,18 @@
+.back-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:fixed;
+  z-index:100; 
+  border-radius: 50%;
+  width: 55rpx;
+  height: 55rpx;
+  color: white;
+  background-color: rgba(156, 146, 146, 0.5);
+}
+.font-value {
+  color: black;
+}
 .basic-message{
   padding: 25rpx 20rpx;
 }
@@ -39,4 +54,23 @@
 .good-sell-num{
   display: flex;
   margin-right: 20rpx;
+}
+/* 参数 */
+.basic-desc{
+  margin: 10rpx 0rpx;
+}
+.desc{
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rpx 30rpx;
+  font-size: 27rpx;
+}
+.desc-title{
+  color: rgb(160, 159, 159)
+}
+.desc-text {
+  margin-left: 30rpx;
+  color: black;
 }

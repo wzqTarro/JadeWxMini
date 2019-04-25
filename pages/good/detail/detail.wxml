@@ -1,6 +1,10 @@
-<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
-</cu-custom>
+<!-- <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+</cu-custom> -->
 <scroll-view scroll-y="true">
+
+  <view class="back-icon" bindtap='goBack' style='margin-top:{{backTop}}px;margin-left:{{backLeft}}px'>
+    <text class='icon-back lg text-white'></text>
+  </view>
   <!-- 商品展示  -->
   <swiper class="screen-swiper square-dot" style='height:{{imageHeight}}' indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
     <swiper-item wx:for="{{swiperList}}" wx:key>
@@ -19,10 +23,41 @@
       {{good.name}}
     </view>
     <view class='good-sell-wrapper'>
-      <p class="good-stock">数量：{{good.stockNum}}</p>
-      <p>发货：省份</p>
-      <p>快递：免邮</p>
+      <p class="desc-title">发货：<p class="font-value">省份</p></p>
+      <p class="desc-title">快递：<p class="font-value">免邮</p></p>
       <p class="good-sell-num">{{good.sellNum}}人付款</p>
     </view>
   </view>
+  <!-- 描述 -->
+  <view class='bg-white basic-desc'>
+    <view class="desc">
+      <view class="desc-text-wrapper">
+        <p class="desc-title">数量</p>
+        <p class="desc-text">1</p>
+      </view>
+    </view>
+    <view class="desc" wx:for="{{good.descList}}" wx:for-item="desc"  wx:key="name" bindtap="showModal" data-target="{{desc.name}}">
+      <view class="desc-text-wrapper">
+        <p class="desc-title">{{desc.name}}</p>
+        <p class="desc-text">{{desc.value}}</p>
+      </view>
+      <view>
+        <text class="icon-right lg text-gray"></text>
+      </view>
+    </view>
+  </view>
+  <!-- 底部模态框 -->
+  <!-- 参数 -->
+  <view class="cu-modal bottom-modal {{modalName=='参数'?'show':''}}">
+    <view class="cu-dialog" style='border-top-left-radius: 25rpx;border-top-right-radius: 25rpx;'>
+      
+      <view class="padding-xl">
+        Modal 内容。
+      </view>
+      <view class="cu-bar" style='display:flex;justify-content:center;background-color:#57aafd;'>
+        <view class="action text-white" bindtap="hideModal">确定</view>
+      </view>
+    </view>
+  </view>
+
 </scroll-view>

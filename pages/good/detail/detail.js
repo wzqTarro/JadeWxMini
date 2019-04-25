@@ -5,9 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
+    backTop: app.globalData.Custom.top,
+    backLeft: app.globalData.windowWidth - app.globalData.Custom.right,
     imageHeight:0,
     good: {
       name:"商品名称",
+      descList: [{
+          'name': "参数",
+          'value': "尺寸 重量..."
+      },{
+          'name': "服务",
+          'value': "支持七天无理由退货"
+      }],
       newprice:133,
       oldprice:180,
       sellNum:1000,
@@ -29,7 +38,8 @@ Page({
       id: 3,
       type: 'video',
       url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
-    }]
+    }],
+    modalName:""// 模态框名称
   },
 
   /**
@@ -40,6 +50,23 @@ Page({
       imageHeight: app.globalData.windowWidth - 30 + "px"
     })
     this.towerSwiper('swiperList');
+  },
+  // 返回上一页
+  goBack() {
+    wx.navigateBack({
+      delta: 1
+    })
+  },
+  // 显示底部模态框
+  showModal(e) {
+    this.setData({
+      modalName: e.currentTarget.dataset.target
+    })
+  },
+  hideModal() {
+    this.setData({
+      modalName: ""
+    })
   },
   // cardSwiper
   cardSwiper(e) {
