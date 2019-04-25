@@ -1,0 +1,34 @@
+<view>
+  <cu-custom bgColor="bg-gradual-blue">
+    <!-- <view slot="content">碧轩阁</view> -->
+  </cu-custom>
+  <!-- 固定 -->
+  <view style='min-height:100rpx'>
+    <view style='position:fixed;z-index:100;width:100%'>
+      <!-- 搜索框 -->
+      <goodSearch></goodSearch>
+    </view>
+  </view>
+  <!-- 分类选项 -->
+  <view class="VerticalBox">
+    <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:calc(100vh - 375rpx)">
+      <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{list}}" wx:key bindtap='tabSelect' data-id="{{index}}" style='display:flex;align-items:center '>
+        {{item.name}}
+      </view>
+    </scroll-view>
+    <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 375rpx)" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+      <view class="padding-top padding-lr" wx:for="{{list}}" wx:key id="main-{{index}}" style='height:100%'>
+        <view class='cu-bar solid-bottom bg-white' style='height:100%;align-items:flex-start'>
+          <!-- 九宫格 -->
+          <view class="cu-list grid col-{{gridCol}} no-border" style='width:100%;'>
+            <view class="cu-item" wx:for="{{iconList}}" wx:key wx:if="{{index<gridCol*2}}" bindtap="goClassify">
+              <view class="icon-{{item.icon}} text-{{item.color}}">
+              </view>
+              <text>{{item.name}}</text>
+            </view>
+          </view>
+        </view>     
+      </view>
+    </scroll-view>
+  </view>
+</view>

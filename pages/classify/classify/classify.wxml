@@ -1,13 +1,13 @@
 <view>
-  <cu-custom bgColor="bg-gradual-blue">
+  <cu-custom bgColor="bg-gradual-blue" isBack="true">
     <!-- <view slot="content">碧轩阁</view> -->
   </cu-custom>
   
   <!-- 固定 -->
-  <view  style='min-height:200rpx'>
+  <view  style='min-height:100rpx'>
     <view style='position:fixed;z-index:100;width:100%'>
       <!-- 搜索框 -->
-      <goodSearch></goodSearch>
+      <!-- <goodSearch></goodSearch> -->
       <!-- 选择项 -->
       <scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}" style='border-top:5rpx solid #F5F5F5'>
         <view class="cu-item " wx:for="{{selectList}}" wx:key bindtap="tabSelect" data-id="{{index}}">
