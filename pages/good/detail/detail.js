@@ -10,13 +10,32 @@ Page({
     imageHeight:0,
     good: {
       name:"商品名称",
+      sizeUnit:"长*宽*高",
+      preferential: false,
+      ingetral: 10,
       descList: [{
           'name': "参数",
           'value': "尺寸 重量..."
-      },{
+        },{
           'name': "服务",
           'value': "支持七天无理由退货"
-      }],
+        }],
+      param:[{
+          name: "种类",
+          text: "和田碧玉"
+        }, {
+          name: "款式",
+          text: "玉坠"
+        },{
+          name: "尺寸",
+          text: "1cm*2cm*1cm"
+        }, {
+          name: "重量",
+          text: "30g"
+        }],
+      serve:[{
+          name:""
+        }],
       newprice:133,
       oldprice:180,
       sellNum:1000,
@@ -39,7 +58,26 @@ Page({
       type: 'video',
       url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
     }],
-    modalName:""// 模态框名称
+    tempDetailList: [{
+      id: 0,
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
+    }, {
+      id: 1,
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
+    }, {
+      id: 2,
+      type: 'image',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
+    }, {
+      id: 3,
+      type: 'video',
+      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
+    }],
+    detailList:[],
+    detailCount: 0,
+    modalName: "",// 模态框名称
   },
 
   /**
@@ -47,9 +85,42 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
+      detailCount: this.data.detailList.length,
       imageHeight: app.globalData.windowWidth - 30 + "px"
     })
     this.towerSwiper('swiperList');
+  },
+  onImageLoad(e) {
+    let imageId = e.currentTarget.id
+    let currentGoodWidth = e.detail.width
+    let currentGoodHeight = e.detail.height
+    let width = app.globalData.windowWidth
+    let scale = width / currentGoodWidth
+    let height = currentGoodHeight * scale
+
+    let images = this.data.tempDetailList 
+    let imageObj = null
+    for(let i = 0; i < images.length; i++) {
+      let image = images[i]
+      if (image.id == imageId) {
+        imageObj = image
+        break
+      }
+    }
+
+    imageObj.height = height
+    let detailList = this.data.detailList
+    detailList.push(imageObj)
+    let detailCount = this.data.detailCount - 1
+
+    let data = {
+      detailCount: detailCount,
+      detailList: detailList
+    }
+    if (detailCount == 0) {
+      data.tempDetailList = []
+    }
+    this.setData(data)
   },
   // 返回上一页
   goBack() {
@@ -57,10 +128,16 @@ Page({
       delta: 1
     })
   },
-  // 显示底部模态框
+  //显示底部模态框
   showModal(e) {
+    let name = this.data.modalName
+    if (name == e.currentTarget.dataset.cur) {
+      name = ''
+    } else {
+      name = e.currentTarget.dataset.cur
+    }
     this.setData({
-      modalName: e.currentTarget.dataset.target
+      modalName: name
     })
   },
   hideModal() {
